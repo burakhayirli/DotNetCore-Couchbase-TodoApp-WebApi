@@ -146,3 +146,9 @@ If you want to use swagger you should go to following url:
 - WhenValidInputAreGiven_Register_ShouldBeReturnAdded
 
 - WhenExistUserEmailIsGiven_Register_ShouldBeReturnUserAlreadyExists
+
+## Todos
+
+- [ ] Create CategoryService Tests
+- [ ] Create TaskService Tests
+
