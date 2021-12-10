@@ -11,11 +11,13 @@
   ```
   docker-compose build
   ```
-
+  ![alt text](https://github.com/burakhayirli/DotNetCore-Couchbase-TodoApp-WebApi/blob/master/images/1-docker-compose-build.png)
+  
   ```
   docker-compose up -d
   ```
-
+  ![alt text](https://github.com/burakhayirli/DotNetCore-Couchbase-TodoApp-WebApi/blob/master/images/2-docker-compose-up.png)
+  
 ## Couchbase Server Configuration
 
 - After installation you should configure your Couchbase Server. 
@@ -65,7 +67,8 @@ If you want to use swagger you should go to following url:
   ```
   http://localhost:5000/swagger/index.html
   ```
-
+ ![alt text](https://github.com/burakhayirli/DotNetCore-Couchbase-TodoApp-WebApi/blob/master/images/3-swaggerui.PNG)
+ 
 - First of all, you need to create an api user. You can use Register tab and post your informations.
 - After that you have to login and get an Access Token. So, you can copy and paste this token in the Authorize section without Bearer keyword.
 - After authentication process, you can try crud users, categories and tasks.
