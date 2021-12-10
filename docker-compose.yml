@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  couchbasedb:
+    image: couchbase:latest
+    container_name: couchbasedb
+    ports:
+      - 8091:8091
+      - 11210:11210
+    networks:
+      - local-bridge
+    volumes:
+      - ~/var/run/docker/:/opt/couchbase/var
+  s_burakhayirlitodowebapi:
+    image: burakhayirlitodowebapi
+    container_name: c_burakhayirlitodowebapi
+    build:
+      context: .
+      dockerfile: WebApi/Dockerfile
+    ports:
+      - 5000:80
+    depends_on:
+      - couchbasedb
+    networks:
+      - local-bridge
+
+networks:
+  local-bridge:
+    driver: bridge

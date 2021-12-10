@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  s_burakhayirlitodowebapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - COUCHBASE_HOST=couchbasedb
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
