@@ -2,6 +2,51 @@
 
 # Prerequests
 
+### There are two ways to run app
+
+### First Way
+You should create couchbase container named couchbasedb
+
+```
+docker run -d -p 8091:8091 --name couchbasedb couchbase
+```
+
+After database creation, you should set configs following
+- Username: Administrator
+- Password: 123456
+- Bucket Name: TodoApp
+
+Next step, you need to create an index for complete couchbase configuration
+
+- Go to Query Editor clicking by Query tab and type query following:
+
+  ```
+  CREATE INDEX ix_type ON TodoApp(type)
+  ```
+
+-  Click the Execute button for run query
+
+- if you have a result after execution following, its sounds like configurations completed successfully 
+
+  ```
+  {
+    "results": []
+  }
+  ```
+
+Lastly you should create api container link with couchbasedb container. It is going to pull dokerixed app from DockerHub
+
+```
+docker run -d -p 5001:80 --link couchbasedb burakhayirli/dotnetcore-couchbase-todoapp-webapi
+```
+
+Now, you can run your application
+
+### Second Way
+- You should clone that repository by downloading zip file or pull with git clone command
+  ```
+  git clone https://github.com/burakhayirli/DotNetCore-Couchbase-TodoApp-WebApi.git
+  ```
 - Project already have a docker-compose file for dockerize Asp.Net Core WebApi and Couchbase Server.
 
 - You can run docker-compose file by Package Manager Console into Visual Studio Envirenment or Command Line on your Windows Machine.
