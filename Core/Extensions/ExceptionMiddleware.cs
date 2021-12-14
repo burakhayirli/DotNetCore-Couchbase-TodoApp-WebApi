@@ -1,4 +1,5 @@
 ﻿using Core.Utilities.Messages;
+using Couchbase.Configuration.Server.Serialization;
 using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
@@ -66,6 +67,11 @@ namespace Core.Extensions
                     Message = message,
                     Errors = errors
                 }.ToString());
+            }
+            else if (e.GetType() == typeof(BootstrapException))
+            {
+                message = "Bağlantı Problemi. "+e.Message;
+                httpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
             }
             else if (e.GetType() == typeof(ApplicationException))
             {

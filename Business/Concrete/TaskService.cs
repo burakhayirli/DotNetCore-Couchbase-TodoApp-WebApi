@@ -50,7 +50,7 @@ namespace Business.Concrete
         }
 
         [SecuredOperation(Priority = 1)]
-        //[CacheAspect()]
+        [CacheAspect()]
         public IDataResult<List<CategoryTaskViewModel>> GetAll(Guid categoryId)
         {
             var user = _userRepository.GetById(GetCurrentUserId());

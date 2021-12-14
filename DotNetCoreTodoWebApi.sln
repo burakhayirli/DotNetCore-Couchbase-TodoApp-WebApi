@@ -17,12 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.NUnitTests", "WebApi
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A011EC27-A40C-42BE-90A2-333582997ECE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{C8740D63-02C0-4E70-BD89-D36B2A3907B0}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Mülakat\todo app kurumlar\1-docker-compose-build.png = ..\..\..\..\Mülakat\todo app kurumlar\1-docker-compose-build.png
-		..\..\..\..\Mülakat\todo app kurumlar\2-docker-compose-up.png = ..\..\..\..\Mülakat\todo app kurumlar\2-docker-compose-up.png
-		..\..\..\..\Mülakat\todo app kurumlar\3-swaggerui.PNG = ..\..\..\..\Mülakat\todo app kurumlar\3-swaggerui.PNG
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CouchbaseConnectionTestConsoleApp", "..\CouchbaseConnectionTestConsoleApp\CouchbaseConnectionTestConsoleApp.csproj", "{B0C3D9DE-CFDE-4CC2-AA6E-C0DFB787934E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +53,10 @@ Global
 		{A011EC27-A40C-42BE-90A2-333582997ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A011EC27-A40C-42BE-90A2-333582997ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A011EC27-A40C-42BE-90A2-333582997ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C3D9DE-CFDE-4CC2-AA6E-C0DFB787934E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C3D9DE-CFDE-4CC2-AA6E-C0DFB787934E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C3D9DE-CFDE-4CC2-AA6E-C0DFB787934E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C3D9DE-CFDE-4CC2-AA6E-C0DFB787934E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -49,7 +49,7 @@ namespace Business.Concrete
         }
 
         [SecuredOperation(Priority = 1)]
-        //[CacheAspect()]
+        [CacheAspect()]
         public IDataResult<CategoryAndTasksViewModel> Get(Guid categoryId)
         {
             var user = _userRepository.GetById(GetCurrentUserId());
@@ -65,7 +65,7 @@ namespace Business.Concrete
         }
 
         [SecuredOperation(Priority = 1)]
-        //[CacheAspect()]
+        [CacheAspect()]
         public IDataResult<List<CategoryViewModel>> GetAll(string searchTerm = "")
         {
             var user = _userRepository.GetById(GetCurrentUserId());

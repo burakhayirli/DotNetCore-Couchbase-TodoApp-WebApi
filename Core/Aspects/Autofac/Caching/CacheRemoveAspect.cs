@@ -30,7 +30,7 @@ namespace Core.Aspects.Autofac.Caching
                 targetTypeName = targetTypeName.Replace(create, string.Empty);
                 targetTypeName = targetTypeName.Replace(update, string.Empty);
                 targetTypeName = targetTypeName.Replace(delete, string.Empty);
-                _pattern = get + targetTypeName;
+                _pattern = "I"+targetTypeName + "."+get;
             }
             _cacheManager.RemoveByPattern(_pattern);
         }

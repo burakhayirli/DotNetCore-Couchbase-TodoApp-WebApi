@@ -21,7 +21,6 @@ namespace DataAccess.Abstract
             var result = _bucket.Get<T>(CreateKey(id));
             if (!result.Success)
                 throw result.Exception;
-
             return result.Value;
         }
 

@@ -30,12 +30,12 @@ namespace WebApi
                 .ConfigureWebHostDefaults(webBuilder =>
                 {                    
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.ConfigureKestrel(options =>
-                    {
-                        var port = Environment.GetEnvironmentVariable("PORT");
-                        if (port != null)
-                            options.ListenAnyIP(Int32.Parse(port));
-                    });
+                    //webBuilder.ConfigureKestrel(options =>
+                    //{
+                    //    var port = Environment.GetEnvironmentVariable("PORT");
+                    //    if (port != null)
+                    //        options.ListenAnyIP(Int32.Parse(port));
+                    //});
                 });
     }
 }

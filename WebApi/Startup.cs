@@ -43,6 +43,7 @@ namespace WebApi
             services.AddControllers().AddNewtonsoftJson(options =>
               options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
+            
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddCors(options =>
             {
@@ -86,25 +87,23 @@ namespace WebApi
 
             services.AddCouchbase(opt =>
             {
-                //opt.Servers = new List<Uri>
-                //    {
-                //    //  new Uri(Configuration.GetSection("Couchbase").GetValue<string>("Servers"))
-                //    //new Uri("http://10.10.210.3:8091")
-                //};
+                opt.Servers = new List<Uri>
+                {
+                    new Uri(Configuration.GetSection("Couchbase").GetValue<string>("Servers"))
+                };
 
                 //Docker container
-                opt.ConnectionString=Configuration.GetSection("Couchbase").GetValue<string>("ConnectionString");
+                //opt.ConnectionString=Configuration.GetSection("Couchbase").GetValue<string>("ConnectionString");
                 opt.Username = Configuration.GetSection("Couchbase").GetValue<string>("Username");
                 opt.Password = Configuration.GetSection("Couchbase").GetValue<string>("Password");
                 opt.UseSsl = false;
-                //opt.IgnoreRemoteCertificateNameMismatch = true;
             });
 
             services.AddCouchbaseBucket<ITodoBucketProvider>("TodoApp");
 
             var coreModule = new CoreModule();
             services.AddDependencyResolvers(new ICoreModule[] { coreModule });
-            services.AddControllers();
+            //services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TodoApp Api", Version = "v1" });

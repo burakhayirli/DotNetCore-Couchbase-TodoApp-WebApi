@@ -12,7 +12,7 @@ services:
     volumes:
       - ~/var/run/docker/:/opt/couchbase/var
   s_burakhayirlitodowebapi:
-    image: burakhayirlitodowebapi
+    image: burakhayirli/dotnetcore-couchbase-todoapp-webapi
     container_name: c_burakhayirlitodowebapi
     build:
       context: .
@@ -27,3 +27,6 @@ services:
 networks:
   local-bridge:
     driver: bridge
+
+
+#docker run -d --name db -p 8091-8094:8091-8094 -p 11210:11210 
